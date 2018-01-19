@@ -16,9 +16,18 @@ output: github_document
 
 ## Additional references
 
+- [DataONE global repository](https://search.dataone.org/#data)
 - [JSON-LD Playground](https://json-ld.org/playground/)
 - [JSON-LD Spec](https://json-ld.org/spec/latest/json-ld/)
 - [`emld` R package](https://github.com/cboettig/emld)
+
+
+## Example files: 
+
+
+- [hf205.json](../examples/hf205.json) Is a pretty extensive example of data structured in the EML-JSON format.
+- [earthcube.json](../examples/earthcube.json) Is a pretty extensive example of data structured in the Schema.Org JSON format.
+
 
 ```{r}
 library(jqr)
