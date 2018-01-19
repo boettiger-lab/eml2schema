@@ -28,6 +28,7 @@ output: github_document
 - [hf205.json](../examples/hf205.json) Is a pretty extensive example of data structured in the EML-JSON format.
 - [earthcube.json](../examples/earthcube.json) Is a pretty extensive example of data structured in the Schema.Org JSON format.
 
+These example files should give you a good idea of how things are laid out in each case.
 
 ```{r}
 library(jqr)
