@@ -2,6 +2,6 @@ Type: Compendium
 Package: eml2schema
 Version: 0.1.0
 Depends: tidyverse
-Imports: rmarkdown, testthat, lintr
+Imports: rmarkdown, testthat, lintr, jqr
 URL: https://github.com/boettiger-lab/eml2schema
 BugReports: https://github.com/boettiger-lab/eml2schema/issues
