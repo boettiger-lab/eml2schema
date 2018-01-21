@@ -1,0 +1,15 @@
+---
+title: "Creator_eml2schema"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+eml_to_schema <- readr::read_file("creator.jq")
+eml <- readr::read_file("hf205.json")
+jq(eml, eml_to_schema)
+```
+
