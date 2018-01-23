@@ -46,6 +46,8 @@ schema_to_eml <-  readr::read_file("jq/schema_to_eml.jq")
 ```
 
 
+## EML to Schema.Org:
+
 Let's map a more complete EML document into schema.org:
 
 ```{r}
@@ -56,13 +58,10 @@ jq(eml, eml_to_schema)
 
 
 
+## Schema.Org to EML
+
 Convert a dataset marked up in <http://schema.org/Dataset> terms into EML
 
-```{r}
-eml <- readr::read_file("../examples/hf205.json")
-jq(eml, eml_to_schema2)
-
-```
 
 ```{r}
 schema <- readr::read_file("../examples/schema-org-dataset.json")

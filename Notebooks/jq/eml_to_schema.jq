@@ -1,16 +1,19 @@
 .dataset |
 {
   id: .["@id"],
-  type: if (.creator[0] | keys [0]) == "individualName" then "Person" else "Organization" end
   creator: [.creator[] .individualName | {
+    type: "Person",
+    id: .id,
     givenName: .givenName,
     familyName: .surName
     }],
   temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
     [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
   spatialCoverage: .coverage.geographicCoverage | {
+    type: "Place",
     description: .geographicDescription,
       geo: {
+        type: "GeoShape",
         box: .boundingCoordinates |
         [.southBoundingCoordinate,
          .westBoundingCoordinate,
