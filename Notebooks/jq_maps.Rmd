@@ -39,11 +39,6 @@ Load in the current working drafts of the JQ maps.
 You'll want to modify the `.jq` files so that they can map 
 much more of the data.  
 
-```{r}
-eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
-schema_to_eml <-  readr::read_file("jq/schema_to_eml.jq")
-
-```
 
 
 ## EML to Schema.Org:
@@ -51,6 +46,7 @@ schema_to_eml <-  readr::read_file("jq/schema_to_eml.jq")
 Let's map a more complete EML document into schema.org:
 
 ```{r}
+eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
 eml <- readr::read_file("../examples/hf205.json")
 jq(eml, eml_to_schema)
 
@@ -64,6 +60,7 @@ Convert a dataset marked up in <http://schema.org/Dataset> terms into EML
 
 
 ```{r}
+schema_to_eml <-  readr::read_file("jq/schema_to_eml.jq")
 schema <- readr::read_file("../examples/schema-org-dataset.json")
 
 eml <- jq(schema, schema_to_eml)

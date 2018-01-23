@@ -420,6 +420,26 @@
           "givenName": "Nicholas",
           "surName": "Gotelli"
         }
+      },
+      {
+        "organizationName": "University of California",
+        "address": {
+        "deliveryPoint": "123 Campus Dr.",
+        "city": "Santa Barbara",
+        "administrativeArea": "CA",
+        "postalCode": "93101",
+        "country": "USA"
+        },
+        "electronicMailAddress": "joe@something.org",
+        "onlineUrl": "www.something.org/~joe",
+        "phone": {
+          "#phonetype": "voice",
+          "phone": "805-123-1234"
+        },
+        "userId": {
+          "#directory": "ldap",
+          "userId": "joe"
+        }
       }
     ],
     "associatedParty": [
