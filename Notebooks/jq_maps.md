@@ -51,24 +51,27 @@ jq(eml, eml_to_schema)
 
     ## {
     ##     "id": "HF205",
+    ##     "type": "Dataset",
     ##     "creator": [
     ##         {
-    ##             "@type": "Person",
+    ##             "type": "Person",
+    ##             "id": null,
     ##             "givenName": "Aaron",
     ##             "familyName": "Ellison"
     ##         },
     ##         {
-    ##             "@type": "Person",
+    ##             "type": "Person",
+    ##             "id": null,
     ##             "givenName": "Nicholas",
     ##             "familyName": "Gotelli"
     ##         }
     ##     ],
     ##     "temporalCoverage": "2012-06-01/2013-12-31",
     ##     "spatialCoverage": {
-    ##         "@type": "Place",
+    ##         "type": "Place",
     ##         "description": "Harvard Forest Greenhouse, Tom Swamp Tract (Harvard Forest)",
     ##         "geo": {
-    ##             "@type": "GeoShape",
+    ##             "type": "GeoShape",
     ##             "box": "+42.42 -72.29 +42.55 -72.10"
     ##         }
     ##     }

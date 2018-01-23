@@ -1,6 +1,7 @@
 .dataset |
 {
   id: .["@id"],
+  type: "Dataset",
   creator: [.creator[] .individualName | {
     type: "Person",
     id: .id,
