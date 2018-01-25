@@ -1,32 +1,33 @@
 .dataset |
+
 {
   id: .["@id"],
   type: "Dataset",
-  creator: [{
+  creator: [if .creator[] .individualName then 
+    .creator[] |if .individualName then
+      .individualName | {
       type: "Person",
-      givenName: .creator[0].individualName.givenName,
-      familyName: .creator[0].individualName.surName,
-    },
-    {
-      type: "Person",
-      givenName: .creator[1].individualName.givenName,
-      familyName: .creator[1].individualName.surName,
-    },
-    {
+      givenName: .givenName,
+      familyName: .surName,
+    }
+    else
+      empty
+    end
+  else
+    .contact | {
       type: "Organization",
-      organizationName: .contact.organizationName,
+      organizationName: .organizationName,
       address: {
         type: "PostalAddress",
-        streetAddress: .contact.address.deliveryPoint,
-        addressLocality: .contact.address.city,
-        addressRegion: .contact.address.administrativeArea,
-        postalCode: .contact.address.postalCode,
-        addressCountry: .contact.address.country
-      }
-      
-    }]
-    ,
-
+        streetAddress: .address.deliveryPoint,
+        addressLocality: .address.city,
+        addressRegion: .address.administrativeArea,
+        postalCode: .address.postalCode,
+        addressCountry: .address.country,}
+        }
+  
+  end] | unique | reverse, 
+    
   temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
     [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
   spatialCoverage: .coverage.geographicCoverage | {
