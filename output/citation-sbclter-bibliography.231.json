@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id"
+  },
+  "@type": "EML",
+  "citation": {
+    "id": "sbclter-bibliography.231",
+    "alternateIdentifier": {
+      "system": "sbclter-bibliography",
+      "alternateIdentifier": "231"
+    },
+    "title": "Water interfaces and environmental complexity at the microscale (Plenary talk)",
+    "creator": {
+      "scope": "document",
+      "individualName": {
+        "surName": "Holden",
+        "givenName": [
+          "P",
+          "A"
+        ]
+      }
+    },
+    "pubDate": "2004",
+    "presentation": {
+      "conferenceName": "Water: Challenges at the Intersection of Human and Natural Systems Workshop, a PNL sponsored NSF/DOE Workshop",
+      "conferenceDate": "September 16-17, 2004",
+      "conferenceLocation": {
+        "city": "Richland",
+        "administrativeArea": "WA"
+      }
+    }
+  },
+  "packageId": "sbclter-bibliography.231.1",
+  "schemaLocation": "eml://ecoinformatics.org/eml-2.1.1 eml.xsd",
+  "scope": "system",
+  "system": "knb"
+}

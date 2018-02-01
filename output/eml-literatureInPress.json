@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "cit": "eml://ecoinformatics.org/literature-2.1.1/"
+  },
+  "@type": "EML",
+  "abstract": {
+    "1": [
+      "this is the abstract without TextType elements.\n      ",
+      "\n      ",
+      "\n\t"
+    ],
+    "para": [
+      "This is the abstract's first paragraph.",
+      "This is the abstract's second paragraph. With\n      \n<emphasis>emphasis<\/emphasis>\n."
+    ]
+  },
+  "article": {
+    "journal": "Journal of Irreproducible Results"
+  },
+  "creator": {
+    "individualName": {
+      "surName": "Jones",
+      "givenName": [
+        "Matthew",
+        "B."
+      ]
+    }
+  },
+  "id": "345",
+  "pubDate": "2002",
+  "schemaLocation": "eml://ecoinformatics.org/literature-2.1.1            eml-literature.xsd",
+  "scope": "document",
+  "title": "Measuring the effectiveness of EML in the field."
+}

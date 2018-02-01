@@ -1,0 +1,109 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id"
+  },
+  "@type": "EML",
+  "dataset": {
+    "scope": "document",
+    "title": "Testing insert",
+    "creator": {
+      "scope": "document",
+      "individualName": {
+        "surName": "Smith"
+      }
+    },
+    "contact": {
+      "scope": "document",
+      "individualName": {
+        "surName": "Jackson"
+      }
+    },
+    "dataTable": {
+      "entityName": "Test Data",
+      "physical": {
+        "objectName": "2.1.0 test physical",
+        "size": {
+          "unit": "bytes",
+          "size": "1"
+        },
+        "characterEncoding": "ASCII",
+        "dataFormat": {
+          "textFormat": {
+            "numHeaderLines": "1",
+            "attributeOrientation": "column",
+            "simpleDelimited": {
+              "fieldDelimiter": "\\t",
+              "quoteCharacter": [
+                "\"",
+                "\\n",
+                "'",
+                "\"",
+                "'",
+                "@"
+              ],
+              "literalCharacter": [
+                "\\",
+                "/",
+                "&",
+                "*",
+                "(",
+                ")",
+                "-"
+              ]
+            }
+          }
+        },
+        "distribution": {
+          "inline": {
+            "admin": {
+              "contact": {
+                "name": "Operator",
+                "institution": "PSI"
+              }
+            }
+          }
+        }
+      },
+      "attributeList": {
+        "attribute": {
+          "attributeName": "rain",
+          "attributeLabel": "Surface Rainfall",
+          "attributeDefinition": "\n                       The amount of rainfall on the sampling unit.\n                   ",
+          "measurementScale": {
+            "interval": {
+              "unit": {
+                "standardUnit": "millimeter"
+              },
+              "precision": "0.5",
+              "numericDomain": {
+                "id": "nd.1",
+                "numberType": "real",
+                "bounds": {
+                  "minimum": {
+                    "exclusive": "false",
+                    "minimum": "\n                                       0\n                                   "
+                  }
+                }
+              }
+            }
+          },
+          "storageType": [
+            "float",
+            {
+              "typeSystem": "http://java.sun.com/docs/books/jls/second_edition/html",
+              "storageType": "\n                       double\n                   "
+            }
+          ]
+        }
+      }
+    }
+  },
+  "packageId": "eml.1.1",
+  "schemaLocation": "eml://ecoinformatics.org/eml-2.1.1 ../eml.xsd",
+  "scope": "system",
+  "system": "knb"
+}

@@ -1,0 +1,118 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id"
+  },
+  "@type": "EML",
+  "access": {
+    "authSystem": "knb",
+    "order": "allowFirst",
+    "id": "brooke.124.1",
+    "scope": "document",
+    "deny": {
+      "principal": "uid=berkley,o=NCEAS,dc=ecoinformatics,dc=org",
+      "permission": [
+        "read",
+        "write",
+        "all"
+      ]
+    },
+    "allow": [
+      {
+        "principal": "uid=brooke,o=NCEAS,dc=ecoinformatics,dc=org",
+        "permission": "all"
+      },
+      {
+        "principal": "public",
+        "permission": "read"
+      }
+    ]
+  },
+  "dataset": {
+    "title": "Sample datset Description",
+    "creator": {
+      "id": "23445",
+      "scope": "document",
+      "individualName": {
+        "surName": "Smith"
+      }
+    },
+    "additionalInfo": {
+      "para": "My comments go here."
+    },
+    "intellectualRights": {
+      "section": "<para>Anyone can use it.<\/para>"
+    },
+    "purpose": {
+      "para": "Provide data to the whole world."
+    },
+    "distribution": [
+      {
+        "online": {
+          "connectionDefinition": {
+            "id": "def.1",
+            "scope": "document",
+            "schemeName": {
+              "system": "CAP",
+              "schemeName": "sde"
+            },
+            "description": {
+              "para": "The SDE scheme used at CAP LTER"
+            },
+            "parameterDefinition": [
+              {
+                "name": "hostname",
+                "definition": "The host",
+                "defaultValue": "mohave.asu.edu"
+              },
+              {
+                "name": "databaseName",
+                "definition": "The name of the database or catalog"
+              },
+              {
+                "name": "owner",
+                "definition": "The owner catalog",
+                "defaultValue": "dbo"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "online": {
+          "connection": {
+            "connectionDefinition": {
+              "references": "def.1"
+            },
+            "parameter": [
+              {
+                "name": "databaseName",
+                "value": "landuse95"
+              },
+              {
+                "name": "owner",
+                "value": "sde"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "contact": [
+      {
+        "individualName": {
+          "surName": "Johnson"
+        }
+      },
+      {
+        "references": "23445"
+      }
+    ]
+  },
+  "packageId": "eml.2111.1",
+  "schemaLocation": "eml://ecoinformatics.org/eml-2.1.1 ../eml.xsd",
+  "system": "knb"
+}
