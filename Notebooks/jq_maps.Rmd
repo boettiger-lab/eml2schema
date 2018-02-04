@@ -46,6 +46,7 @@ much more of the data.
 Let's map a more complete EML document into schema.org:
 
 ```{r}
+getwd()
 eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
 eml <- readr::read_file("../examples/hf205.json")
 jq(eml, eml_to_schema)

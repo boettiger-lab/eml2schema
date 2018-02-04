@@ -40,6 +40,12 @@ EML to Schema.Org:
 Let's map a more complete EML document into schema.org:
 
 ``` r
+getwd()
+```
+
+    ## [1] "/Users/Alex/Desktop/UCB/URAP/Boettiger_Group/eml2schema/Notebooks"
+
+``` r
 eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
 eml <- readr::read_file("../examples/hf205.json")
 jq(eml, eml_to_schema)
@@ -51,15 +57,51 @@ jq(eml, eml_to_schema)
     ##     "creator": [
     ##         {
     ##             "type": "Person",
+    ##             "givenName": "Nicholas",
+    ##             "familyName": "Gotelli"
+    ##         },
+    ##         {
+    ##             "type": "Person",
     ##             "givenName": "Aaron",
     ##             "familyName": "Ellison"
     ##         },
     ##         {
-    ##             "type": "Person",
-    ##             "givenName": "Nicholas",
-    ##             "familyName": "Gotelli"
+    ##             "type": "Organization",
+    ##             "organizationName": "University of California",
+    ##             "address": {
+    ##                 "type": "PostalAddress",
+    ##                 "streetAddress": "123 Campus Dr.",
+    ##                 "addressLocality": "Santa Barbara",
+    ##                 "addressRegion": "CA",
+    ##                 "postalCode": "93101",
+    ##                 "addressCountry": "USA"
+    ##             }
     ##         },
-    ##         null
+    ##         {
+    ##             "type": "Organization",
+    ##             "organizationName": "Harvard Forest",
+    ##             "address": {
+    ##                 "type": "PostalAddress",
+    ##                 "streetAddress": "324 North Main Street",
+    ##                 "addressLocality": "Petersham",
+    ##                 "addressRegion": "MA",
+    ##                 "postalCode": "01366",
+    ##                 "addressCountry": "USA"
+    ##             }
+    ##         },
+    ##         {
+    ##             "type": "Person",
+    ##             "givenName": "Aaron",
+    ##             "familyName": "Ellison",
+    ##             "address": {
+    ##                 "type": "PostalAddress",
+    ##                 "streetAddress": "324 North Main Street",
+    ##                 "addressLocality": "Petersham",
+    ##                 "addressRegion": "MA",
+    ##                 "postalCode": "01366",
+    ##                 "addressCountry": "USA"
+    ##             }
+    ##         }
     ##     ],
     ##     "temporalCoverage": "2012-06-01/2013-12-31",
     ##     "spatialCoverage": {
@@ -88,6 +130,15 @@ eml
     ## {
     ##     "@id": null,
     ##     "@type": "Dataset",
+    ##     "creator": {
+    ##         "organizationName": "OC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+    ##         "phone": {
+    ##             "phonetype": "voice",
+    ##             "phone": "+1-828-271-4800"
+    ##         },
+    ##         "electronicMailAddress": "ncei.orders@noaa.gov",
+    ##         "onlineUrl": "https://www.ncei.noaa.gov/"
+    ##     },
     ##     "coverage": {
     ##         "temporalCoverage": {
     ##             "rangeOfDates": {

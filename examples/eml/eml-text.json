@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "txt": "eml://ecoinformatics.org/text-2.1.1/"
+  },
+  "@type": "EML",
+  "schemaLocation": "eml://ecoinformatics.org/text-2.1.1            eml-text.xsd",
+  "section": [
+    "<para>This is some text.<\/para>\n<section>\n  <title>Subsection title<\/title>\n  <para>Some text in the subsection<\/para>\n<\/section>",
+    "<para>Start with some text, and then mix in some elements:\n      <itemizedlist><listitem><para>Item numero uno<\/para><\/listitem><listitem><para>Item numero dos<\/para><\/listitem><listitem><para>Item three contains a list itself:<\/para><orderedlist><listitem><para>Oranges<\/para><\/listitem><listitem><para>Apples<\/para><\/listitem><\/orderedlist><\/listitem><\/itemizedlist>\n      And then some text with <emphasis>emphasis<\/emphasis>\n      following the list of items.\n    <\/para>",
+    "<title>Test of sub and super scripts<\/title>\n<para>Subscript: H<subscript>2<\/subscript>O<\/para>\n<para>Superscript: y=x<superscript>3<\/superscript><\/para>\n<para>Nested superscript: \n        y=x<superscript>3<superscript>4<\/superscript><\/superscript><\/para>\n<para>Nested subscript: \n        x<subscript>3<subscript>4<\/subscript><\/subscript><\/para>"
+  ]
+}

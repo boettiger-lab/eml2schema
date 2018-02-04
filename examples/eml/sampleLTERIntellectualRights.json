@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "cit": "eml://ecoinformatics.org/literature-2.1.1/",
+    "doc": "eml://ecoinformatics.org/documentation-2.1.1/",
+    "ds": "eml://ecoinformatics.org/dataset-2.1.1/",
+    "prot": "eml://ecoinformatics.org/protocol-2.1.1/",
+    "res": "eml://ecoinformatics.org/resource-2.1.1/",
+    "sw": "eml://ecoinformatics.org/software-2.1.1/"
+  },
+  "@type": "EML",
+  "dataset": {
+    "title": "My Dataset",
+    "creator": {
+      "individualName": {
+        "surName": "McCartney"
+      }
+    },
+    "intellectualRights": {
+      "section": [
+        "<title>Definitions<\/title>\n<para>\n  <itemizedlist>\n    <listitem>\n      <para><emphasis>Data Set<\/emphasis> - Digital data and its metadata derived from any research activity such as field observations, collections, laboratory analysis, experiments, or the post-processing of existing data and identified by a unique identifier issued by a recognized cataloging authority such as a site, university, agency, or other organization.<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Data User <\/emphasis>- individual to whom access has been granted to this Data Set, including his\nor her immediate collaboration sphere, defined here as the institutions, partners, students\nand staff with whom the Data User collaborates, and with whom access must be granted,\nin order to fulfill the Data User's intended use of the Data Set<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Data Set Creator<\/emphasis> - individual or institution that produced the Data Set<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Data Set Owner<\/emphasis> – individual or institution that holds intellectual property rights to the\ndataset. Note that this may or may not be defined as a legal copyright. If no other party is\ndesignated in the metadata as Data Set Owner, it may be presumed that these rights are\nheld by the Data Set Creator.<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Data Set Distributor<\/emphasis>- individual or institution providing access to the Data Sets.<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Data Set Contact<\/emphasis> - party designated in the accompanying metadata of the Data Set as\nthe primary contact for the Data Set.<\/para>\n    <\/listitem>\n  <\/itemizedlist>\n<\/para>",
+        "<title>Conditions of Use<\/title>\n<para>The re-use of scientific data has the potential to greatly increase communication, collaboration\nand synthesis within and among disciplines, and thus is fostered, supported and encouraged.\nPermission to use this dataset is granted to the Data User free of charge subject to the following\nterms:<\/para>\n<para>\n  <orderedlist>\n    <listitem>\n      <para><emphasis>Acceptable use<\/emphasis>. Use of the dataset will be restricted to academic, research, educational,\ngovernment, recreational, or other not-for-profit professional purposes. The Data User is\npermitted to produce and distribute derived works from this dataset provided that they are\nreleased under the same license terms as those accompanying this Data Set. Any other\nuses for the Data Set or its derived products will require explicit permission from the\ndataset owner.<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Redistribution<\/emphasis>. The data are provided for use by the Data User. The metadata and this\nlicense must accompany all copies made and be available to all users of this Data Set.\nThe Data User will not redistribute the original Data Set beyond this collaboration sphere.\n<\/para>\n    <\/listitem>\n    <listitem>\n      <para>Citation. It is considered a matter of professional ethics to acknowledge the work of other\nscientists. Thus, the Data User will properly cite the Data Set in any publications or in the\nmetadata of any derived data products that were produced using the Data Set. Citation\nshould take the following general form: Creator, Year of Data Publication, Title of\nDataset, Publisher, Dataset identifier. For example:\n<\/para>\n      <para>McKee, W. 2001. Vascular plant list on the Andrews Experimental Forest and nearby Research\nNatural Areas: Long-Term Ecological Research. Corvallis, OR: Forest Science Data Bank:\nSA002. [Database]. http://www.fsl.orst.edu/lter/data/abstract.cfm?dbcode=SA002. (21 October\n2004)<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Acknowledgement<\/emphasis>. The Data User should acknowledge any institutional support or\nspecific funding awards referenced in the metadata accompanying this dataset in any\npublications where the Data Set contributed significantly to its content.\nAcknowledgements should identify the supporting party, the party that received the\nsupport, and any identifying information such as grant numbers. For example:<\/para>\n      <para>\nData sets were provided by the Forest Science Data Bank, a partnership between the\nDepartment of Forest Science, Oregon State University, and the U.S. Forest Service Pacific\nNorthwest Research Station, Corvallis, Oregon. Significant funding for collection of these\ndata was provided by the National Science Foundation Long-Term Ecological Research\nprogram (NSF Grant numbers BSR-90-11663 and DEB-96-32921).\n<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Notification<\/emphasis>. The Data User will notify the Data Set Contact when any derivative work or\npublication based on or derived from the Data Set is distributed. The Data User will\nprovide the data contact with two reprints of any publications resulting from use of the\nData Set and will provide copies, or on-line access to, any derived digital products.\nNotification will include an explanation of how the Data Set was used to produce the\nderived work.\n<\/para>\n    <\/listitem>\n    <listitem>\n      <para><emphasis>Collaboration<\/emphasis>. The Data Set has been released in the spirit of open scientific\ncollaboration. Data Users are thus strongly encouraged to consider consultation,\ncollaboration and/or co-authorship with the Data Set Creator.<\/para>\n    <\/listitem>\n  <\/orderedlist>\n<\/para>\n<para>By accepting this Data Set, the Data User agrees to abide by the terms of this agreement. The\nData Owner shall have the right to terminate this agreement immediately by written notice upon\nthe Data User's breach of, or non-compliance with, any of its terms. The Data User may be held\nresponsible for any misuse that is caused or encouraged by the Data User's failure to abide by the\nterms of this agreement.<\/para>",
+        "<title>Disclaimer\n<\/title>\n<para>While substantial efforts are made to ensure the accuracy of data and documentation contained in\nthis Data Set, complete accuracy of data and metadata cannot be guaranteed. All data and\nmetadata are made available \"as is\". The Data User holds all parties involved in the production or\ndistribution of the Data Set harmless for damages resulting from its use or interpretation.\n<\/para>"
+      ]
+    },
+    "contact": {
+      "positionName": "Data Manager, CAP LTER"
+    }
+  },
+  "packageId": "tempid",
+  "schemaLocation": "eml://ecoinformatics.org/eml-2.1.1 http://ces.asu.edu/eml/eml.xsd",
+  "system": "ces_dataset"
+}

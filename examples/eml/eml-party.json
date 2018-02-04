@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "rp": "eml://ecoinformatics.org/party-2.1.1/"
+  },
+  "@type": "EML",
+  "address": {
+    "deliveryPoint": "123 Campus Dr.",
+    "city": "Santa Barbara",
+    "administrativeArea": "CA",
+    "postalCode": "93101",
+    "country": "USA"
+  },
+  "electronicMailAddress": "joe@something.org",
+  "onlineUrl": "www.something.org/~joe",
+  "organizationName": "\n    University of California\n  ",
+  "phone": {
+    "phonetype": "voice",
+    "phone": "\n    805-123-1234\n  "
+  },
+  "schemaLocation": "eml://ecoinformatics.org/party-2.1.1 eml-party.xsd",
+  "userId": {
+    "directory": "ldap",
+    "userId": "joe"
+  }
+}

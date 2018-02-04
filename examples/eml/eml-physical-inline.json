@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "phys": "eml://ecoinformatics.org/physical-2.1.1/"
+  },
+  "@type": "EML",
+  "dataFormat": {
+    "textFormat": {
+      "numHeaderLines": "1",
+      "recordDelimiter": "\\n",
+      "maxRecordLength": "6",
+      "attributeOrientation": "column",
+      "simpleDelimited": {
+        "fieldDelimiter": ",",
+        "quoteCharacter": "\"",
+        "literalCharacter": "\\"
+      }
+    }
+  },
+  "distribution": {
+    "inline": "x,y,z\n1,2,3\n4,5,6\n7,8,9\n    "
+  },
+  "objectName": "data.txt",
+  "schemaLocation": "eml://ecoinformatics.org/physical-2.1.1 eml-physical.xsd",
+  "size": "4096"
+}

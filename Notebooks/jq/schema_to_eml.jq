@@ -2,6 +2,18 @@
 {
   "@id": .["@id"],
   "@type": .["@type"],
+
+  creator: .creator | {
+    
+    organizationName: .name,
+    phone: .contactPoint | {
+      phonetype: "voice",
+      phone: .telephone
+    },
+    electronicMailAddress: .contactPoint .email,
+    onlineUrl: .url
+  },
+  
   coverage: {
     temporalCoverage: {
       rangeOfDates: {

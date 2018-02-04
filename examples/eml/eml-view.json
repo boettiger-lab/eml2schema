@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@vocab": "eml://ecoinformatics.org/eml-2.1.1/",
+    "eml": "eml://ecoinformatics.org/eml-2.1.1/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "id": "@id",
+    "view": "eml://ecoinformatics.org/view-2.1.1/"
+  },
+  "@type": "EML",
+  "alternateIdentifier": "TEMPID234",
+  "attributeList": {
+    "attribute": {
+      "attributeName": "rain",
+      "attributeLabel": "Surface Rainfall",
+      "attributeDefinition": "The amount of rainfall on the sampling unit.\n      ",
+      "measurementScale": {
+        "interval": {
+          "unit": {
+            "standardUnit": "millimeter"
+          },
+          "precision": "0.5",
+          "numericDomain": {
+            "id": "nd.1",
+            "numberType": "real",
+            "bounds": {
+              "minimum": {
+                "exclusive": "false",
+                "minimum": "0"
+              }
+            }
+          }
+        }
+      },
+      "storageType": [
+        "float",
+        {
+          "typeSystem": "http://java.sun.com/docs/books/jls/second_edition/html",
+          "storageType": "double"
+        }
+      ]
+    }
+  },
+  "entityDescription": "This is a test entity that is fake.",
+  "entityName": "Test Data",
+  "queryStatement": "\n    select * from xml_documents;\n  ",
+  "schemaLocation": "eml://ecoinformatics.org/view-2.1.1 eml-view.xsd"
+}
