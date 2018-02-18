@@ -96,3 +96,5 @@
       } ]| del( .[] |select(.givenName == null and .organizationName == null)) | unique | reverse
 }
 
+
+
