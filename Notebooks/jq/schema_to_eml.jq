@@ -18,9 +18,9 @@ dataset: {
     temporalCoverage: {
       rangeOfDates: {
         beginDate : {
-          calenderDate: .temporalCoverage | split("/") |.[0]},
+          calendarDate: .temporalCoverage | split("/") |.[0]},
         endDate : {
-          calenderDate: .temporalCoverage | split("/") |.[1] }
+          calendarDate: .temporalCoverage | split("/") |.[1] }
       }
     },
     geographicCoverage: .spatialCoverage | {
