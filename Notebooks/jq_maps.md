@@ -54,6 +54,66 @@ jq(eml, eml_to_schema)
     ## {
     ##     "id": null,
     ##     "type": "Dataset",
+    ##     "dataset": {
+    ##         "temporalCoverage": "2012-06-01/2013-12-31",
+    ##         "spatialCoverage": {
+    ##             "type": "Place",
+    ##             "description": "Harvard Forest Greenhouse, Tom Swamp Tract (Harvard Forest)",
+    ##             "geo": {
+    ##                 "type": "GeoShape",
+    ##                 "box": "+42.42 -72.29 +42.55 -72.10"
+    ##             }
+    ##         },
+    ##         "creator": [
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": "Nicholas",
+    ##                 "familyName": "Gotelli"
+    ##             },
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": "Aaron",
+    ##                 "familyName": "Ellison"
+    ##             },
+    ##             {
+    ##                 "type": "Organization",
+    ##                 "organizationName": "University of California",
+    ##                 "address": {
+    ##                     "type": "PostalAddress",
+    ##                     "streetAddress": "123 Campus Dr.",
+    ##                     "addressLocality": "Santa Barbara",
+    ##                     "addressRegion": "CA",
+    ##                     "postalCode": "93101",
+    ##                     "addressCountry": "USA"
+    ##                 }
+    ##             },
+    ##             {
+    ##                 "type": "Organization",
+    ##                 "organizationName": "Harvard Forest",
+    ##                 "address": {
+    ##                     "type": "PostalAddress",
+    ##                     "streetAddress": "324 North Main Street",
+    ##                     "addressLocality": "Petersham",
+    ##                     "addressRegion": "MA",
+    ##                     "postalCode": "01366",
+    ##                     "addressCountry": "USA"
+    ##                 }
+    ##             },
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": "Aaron",
+    ##                 "familyName": "Ellison",
+    ##                 "address": {
+    ##                     "type": "PostalAddress",
+    ##                     "streetAddress": "324 North Main Street",
+    ##                     "addressLocality": "Petersham",
+    ##                     "addressRegion": "MA",
+    ##                     "postalCode": "01366",
+    ##                     "addressCountry": "USA"
+    ##                 }
+    ##             }
+    ##         ]
+    ##     },
     ##     "citation": {
     ##         "id": null,
     ##         "type": "CreativeWork",
@@ -75,10 +135,7 @@ jq(eml, eml_to_schema)
     ##             "type": "GeoShape",
     ##             "box": "   "
     ##         }
-    ##     },
-    ##     "creator": [
-    ## 
-    ##     ]
+    ##     }
     ## }
 
 ``` r
@@ -117,19 +174,7 @@ jq(eml_citation50, eml_to_schema)
     ##             }
     ##         ],
     ##         "datePublished": "2002"
-    ##     },
-    ##     "temporalCoverage": "/",
-    ##     "spatialCoverage": {
-    ##         "type": "Place",
-    ##         "description": null,
-    ##         "geo": {
-    ##             "type": "GeoShape",
-    ##             "box": "   "
-    ##         }
-    ##     },
-    ##     "creator": [
-    ## 
-    ##     ]
+    ##     }
     ## }
 
 ``` r
@@ -138,42 +183,9 @@ eml_citation51 <- readr::read_file("../examples/eml/citation-sbclter-bibliograph
 jq(eml_citation51, eml_to_schema)
 ```
 
-    ## {
-    ##     "id": null,
-    ##     "type": "Dataset",
-    ##     "citation": {
-    ##         "id": "sbclter-bibliography.51",
-    ##         "type": "CreativeWork",
-    ##         "headline": "Hopping with Life: The Ecology of Kelp on the Beach",
-    ##         "about": "This 4 minute video describes the ecology of kelp wrack on the sandy beaches of Southern California, USA. The kelp wrack provides an important food source and habitat for kelp flies, maggots and small crustaceans on which several species of shore birds, starlings, common crows, black phoebes and warblers feed.",
-    ##         "creator": [
-    ##             {
-    ##                 "type": "Person",
-    ##                 "givenName": "Jenifer",
-    ##                 "familyName": "Dugan"
-    ##             }
-    ##         ],
-    ##         "publisher": [
-    ##             {
-    ##                 "type": "Organization",
-    ##                 "organizationName": "The Ocean Channel (for Ty Warner Sea Center)"
-    ##             }
-    ##         ],
-    ##         "datePublished": "2002"
-    ##     },
-    ##     "temporalCoverage": "/",
-    ##     "spatialCoverage": {
-    ##         "type": "Place",
-    ##         "description": null,
-    ##         "geo": {
-    ##             "type": "GeoShape",
-    ##             "box": "   "
-    ##         }
-    ##     },
-    ##     "creator": [
+    ## [
     ## 
-    ##     ]
-    ## }
+    ## ]
 
 Schema.Org to EML
 -----------------
@@ -204,10 +216,10 @@ eml
     ##             "temporalCoverage": {
     ##                 "rangeOfDates": {
     ##                     "beginDate": {
-    ##                         "calenderDate": "1950-01-01"
+    ##                         "calendarDate": "1950-01-01"
     ##                     },
     ##                     "endDate": {
-    ##                         "calenderDate": "2013-12-18"
+    ##                         "calendarDate": "2013-12-18"
     ##                     }
     ##                 }
     ##             },
