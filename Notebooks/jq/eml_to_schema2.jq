@@ -8,7 +8,7 @@
     type: "CreativeWork",
     headline: .title,
     about: .abstract.para,
-    creator: [.creator | {
+    creator: [.creator[] | {
       type: "Person",
       givenName: .individualName.givenName,
       familyName: .individualName.surName, },
@@ -42,6 +42,8 @@
          .eastBoundingCoordinate] | join(" ")
       }
   },
+
+  
   creator: [.creator | 
       {
       type: "Person",
@@ -92,7 +94,5 @@
         postalCode: .address.postalCode,
         addressCountry: .address.country,}
       } ]| del( .[] |select(.givenName == null and .organizationName == null)) | unique | reverse
-
-
 }
 

@@ -53,6 +53,18 @@ jq(eml, eml_to_schema)
 
 ```
 
+```{r}
+eml_to_schema <- readr::read_file("jq/eml_to_schema2.jq")
+eml_citation50 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.50.json")
+jq(eml_citation50, eml_to_schema)
+```
+
+```{r}
+eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
+eml_citation51 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.51.json")
+jq(eml_citation51, eml_to_schema)
+```
+
 
 
 ## Schema.Org to EML

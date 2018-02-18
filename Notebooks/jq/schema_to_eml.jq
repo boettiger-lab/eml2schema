@@ -1,7 +1,7 @@
-. |
+. | 
 {
+dataset: {
   "@id": .["@id"],
-  "@type": .["@type"],
 
   creator: .creator | {
     
@@ -17,8 +17,10 @@
   coverage: {
     temporalCoverage: {
       rangeOfDates: {
-        beginDate : .temporalCoverage | split("/") |.[0],
-        endDate : .temporalCoverage | split("/") |.[1]
+        beginDate : {
+          calenderDate: .temporalCoverage | split("/") |.[0]},
+        endDate : {
+          calenderDate: .temporalCoverage | split("/") |.[1] }
       }
     },
     geographicCoverage: .spatialCoverage | {
@@ -31,4 +33,5 @@
       }
     }
   }
+}
 }

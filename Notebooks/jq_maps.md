@@ -43,7 +43,7 @@ Let's map a more complete EML document into schema.org:
 getwd()
 ```
 
-    ## [1] "/Users/Alex/Desktop/UCB/URAP/Boettiger_Group/eml2schema/Notebooks"
+    ## [1] "/Users/zihaoprimary/Desktop/UCB/Research/URAP/boettiger/eml2schema/Notebooks"
 
 ``` r
 eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
@@ -52,66 +52,127 @@ jq(eml, eml_to_schema)
 ```
 
     ## {
-    ##     "id": "HF205",
+    ##     "id": null,
     ##     "type": "Dataset",
-    ##     "creator": [
-    ##         {
-    ##             "type": "Person",
-    ##             "givenName": "Nicholas",
-    ##             "familyName": "Gotelli"
-    ##         },
-    ##         {
-    ##             "type": "Person",
-    ##             "givenName": "Aaron",
-    ##             "familyName": "Ellison"
-    ##         },
-    ##         {
-    ##             "type": "Organization",
-    ##             "organizationName": "University of California",
-    ##             "address": {
-    ##                 "type": "PostalAddress",
-    ##                 "streetAddress": "123 Campus Dr.",
-    ##                 "addressLocality": "Santa Barbara",
-    ##                 "addressRegion": "CA",
-    ##                 "postalCode": "93101",
-    ##                 "addressCountry": "USA"
-    ##             }
-    ##         },
-    ##         {
-    ##             "type": "Organization",
-    ##             "organizationName": "Harvard Forest",
-    ##             "address": {
-    ##                 "type": "PostalAddress",
-    ##                 "streetAddress": "324 North Main Street",
-    ##                 "addressLocality": "Petersham",
-    ##                 "addressRegion": "MA",
-    ##                 "postalCode": "01366",
-    ##                 "addressCountry": "USA"
-    ##             }
-    ##         },
-    ##         {
-    ##             "type": "Person",
-    ##             "givenName": "Aaron",
-    ##             "familyName": "Ellison",
-    ##             "address": {
-    ##                 "type": "PostalAddress",
-    ##                 "streetAddress": "324 North Main Street",
-    ##                 "addressLocality": "Petersham",
-    ##                 "addressRegion": "MA",
-    ##                 "postalCode": "01366",
-    ##                 "addressCountry": "USA"
-    ##             }
-    ##         }
-    ##     ],
-    ##     "temporalCoverage": "2012-06-01/2013-12-31",
+    ##     "citation": {
+    ##         "id": null,
+    ##         "type": "CreativeWork",
+    ##         "headline": null,
+    ##         "about": null,
+    ##         "creator": [
+    ## 
+    ##         ],
+    ##         "publisher": [
+    ## 
+    ##         ],
+    ##         "datePublished": null
+    ##     },
+    ##     "temporalCoverage": "/",
     ##     "spatialCoverage": {
     ##         "type": "Place",
-    ##         "description": "Harvard Forest Greenhouse, Tom Swamp Tract (Harvard Forest)",
+    ##         "description": null,
     ##         "geo": {
     ##             "type": "GeoShape",
-    ##             "box": "+42.42 -72.29 +42.55 -72.10"
+    ##             "box": "   "
     ##         }
-    ##     }
+    ##     },
+    ##     "creator": [
+    ## 
+    ##     ]
+    ## }
+
+``` r
+eml_to_schema <- readr::read_file("jq/eml_to_schema2.jq")
+eml_citation50 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.50.json")
+jq(eml_citation50, eml_to_schema)
+```
+
+    ## {
+    ##     "id": null,
+    ##     "type": "Dataset",
+    ##     "citation": {
+    ##         "id": "sbclter-bibliography.50",
+    ##         "type": "CreativeWork",
+    ##         "headline": "Satellite Views of Plumes and Blooms in the Santa Barbara Channel (in) Channel Islands I: Introduction to Channel Islands National Marine Sanctuary ",
+    ##         "about": "This 30 min video is an introduction to the Channel Islands National Marine Sanctuary designed for a nation-wide audience of middle school aged students. It includes six minutes on satellite views of sediment plumes and phytoplankton blooms in the Santa Barbara Channel.",
+    ##         "creator": [
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": "S",
+    ##                 "familyName": "Fangman"
+    ##             },
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": [
+    ##                     "D",
+    ##                     "A"
+    ##                 ],
+    ##                 "familyName": "Siegel"
+    ##             }
+    ##         ],
+    ##         "publisher": [
+    ##             {
+    ##                 "type": "Organization",
+    ##                 "organizationName": "Project Oceanography, University of South Florida"
+    ##             }
+    ##         ],
+    ##         "datePublished": "2002"
+    ##     },
+    ##     "temporalCoverage": "/",
+    ##     "spatialCoverage": {
+    ##         "type": "Place",
+    ##         "description": null,
+    ##         "geo": {
+    ##             "type": "GeoShape",
+    ##             "box": "   "
+    ##         }
+    ##     },
+    ##     "creator": [
+    ## 
+    ##     ]
+    ## }
+
+``` r
+eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
+eml_citation51 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.51.json")
+jq(eml_citation51, eml_to_schema)
+```
+
+    ## {
+    ##     "id": null,
+    ##     "type": "Dataset",
+    ##     "citation": {
+    ##         "id": "sbclter-bibliography.51",
+    ##         "type": "CreativeWork",
+    ##         "headline": "Hopping with Life: The Ecology of Kelp on the Beach",
+    ##         "about": "This 4 minute video describes the ecology of kelp wrack on the sandy beaches of Southern California, USA. The kelp wrack provides an important food source and habitat for kelp flies, maggots and small crustaceans on which several species of shore birds, starlings, common crows, black phoebes and warblers feed.",
+    ##         "creator": [
+    ##             {
+    ##                 "type": "Person",
+    ##                 "givenName": "Jenifer",
+    ##                 "familyName": "Dugan"
+    ##             }
+    ##         ],
+    ##         "publisher": [
+    ##             {
+    ##                 "type": "Organization",
+    ##                 "organizationName": "The Ocean Channel (for Ty Warner Sea Center)"
+    ##             }
+    ##         ],
+    ##         "datePublished": "2002"
+    ##     },
+    ##     "temporalCoverage": "/",
+    ##     "spatialCoverage": {
+    ##         "type": "Place",
+    ##         "description": null,
+    ##         "geo": {
+    ##             "type": "GeoShape",
+    ##             "box": "   "
+    ##         }
+    ##     },
+    ##     "creator": [
+    ## 
+    ##     ]
     ## }
 
 Schema.Org to EML
@@ -128,31 +189,36 @@ eml
 ```
 
     ## {
-    ##     "@id": null,
-    ##     "@type": "Dataset",
-    ##     "creator": {
-    ##         "organizationName": "OC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
-    ##         "phone": {
-    ##             "phonetype": "voice",
-    ##             "phone": "+1-828-271-4800"
+    ##     "dataset": {
+    ##         "@id": null,
+    ##         "creator": {
+    ##             "organizationName": "OC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+    ##             "phone": {
+    ##                 "phonetype": "voice",
+    ##                 "phone": "+1-828-271-4800"
+    ##             },
+    ##             "electronicMailAddress": "ncei.orders@noaa.gov",
+    ##             "onlineUrl": "https://www.ncei.noaa.gov/"
     ##         },
-    ##         "electronicMailAddress": "ncei.orders@noaa.gov",
-    ##         "onlineUrl": "https://www.ncei.noaa.gov/"
-    ##     },
-    ##     "coverage": {
-    ##         "temporalCoverage": {
-    ##             "rangeOfDates": {
-    ##                 "beginDate": "1950-01-01",
-    ##                 "endDate": "2013-12-18"
-    ##             }
-    ##         },
-    ##         "geographicCoverage": {
-    ##             "geographicDescription": null,
-    ##             "boundingCoordinates": {
-    ##                 "westBoundingCoordinate": "-65.0",
-    ##                 "eastBoundingCoordinate": "172.0",
-    ##                 "northBoundingCoordinate": "72.0",
-    ##                 "southBoundingCoordinate": "18.0"
+    ##         "coverage": {
+    ##             "temporalCoverage": {
+    ##                 "rangeOfDates": {
+    ##                     "beginDate": {
+    ##                         "calenderDate": "1950-01-01"
+    ##                     },
+    ##                     "endDate": {
+    ##                         "calenderDate": "2013-12-18"
+    ##                     }
+    ##                 }
+    ##             },
+    ##             "geographicCoverage": {
+    ##                 "geographicDescription": null,
+    ##                 "boundingCoordinates": {
+    ##                     "westBoundingCoordinate": "-65.0",
+    ##                     "eastBoundingCoordinate": "172.0",
+    ##                     "northBoundingCoordinate": "72.0",
+    ##                     "southBoundingCoordinate": "18.0"
+    ##                 }
     ##             }
     ##         }
     ##     }
