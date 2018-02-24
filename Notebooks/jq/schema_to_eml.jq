@@ -1,17 +1,41 @@
 . | 
-{
+{"@type": "EML",
 dataset: {
   "@id": .["@id"],
 
-  creator: .creator | {
-    
-    organizationName: .name,
+  creator: [.creator[] | {
+    "@id": .["@id"],
+    individualName: .name,
     phone: .contactPoint | {
       phonetype: "voice",
       phone: .telephone
     },
     electronicMailAddress: .contactPoint .email,
     onlineUrl: .url
+  }],
+  
+  citation: {
+    article: .citation
+  },
+  
+  description: .description,
+  
+  publisher: .publisher | {
+    "@id": .["@id"],
+    organizationName: .name,
+    onlineUrl: .url,
+  },
+  
+  project: .isPartOf | {
+    "@id": .["@id"],
+    title: .name,
+    abstract: .description
+  },
+  
+  distribution:  .distribution | {
+    online: {
+      onlineUrl: .contentUrl
+      }
   },
   
   coverage: {
@@ -32,6 +56,9 @@ dataset: {
         southBoundingCoordinate: .geo.box | split(" ") | .[0]
       }
     }
-  }
+  },
+  onlineUrl: .url,
+  licenseURL: .license
+  
 }
 }
