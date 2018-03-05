@@ -3,14 +3,26 @@
 dataset: {
   "@id": .["@id"],
 
-  creator: [.creator[] | {
+  creator: [if .creator|type == "array" then .creator[] else .creator end | {
     "@id": .["@id"],
-    individualName: .name,
+    individualName: [if .["@type"] == "Person" then {
+       givenName: .name | split(" ") |.[1],
+       surName: .name | split(" ") |.[2] }
+    else 
+      empty
+    end] ,
+    
+    organizationName: [if .["@type"] == "Organization" then 
+       .name
+    else 
+      empty
+    end],
+    
     phone: .contactPoint | {
       phonetype: "voice",
       phone: .telephone
     },
-    electronicMailAddress: .contactPoint .email,
+    electronicMailAddress: .contactPoint.email,
     onlineUrl: .url
   }],
   
@@ -22,21 +34,32 @@ dataset: {
   
   publisher: .publisher | {
     "@id": .["@id"],
-    organizationName: .name,
+    individualName: [if .["@type"] == "Person" then {
+       givenName: .name | split(" ") |.[1],
+       surName: .name | split(" ") |.[2] }
+    else 
+      empty
+    end] ,
+    
+    organizationName: [if .["@type"] == "Organization" then 
+       .name
+    else 
+      empty
+    end],
     onlineUrl: .url,
-  },
+  } | del( . |select(.["@id"] == null)),
   
   project: .isPartOf | {
     "@id": .["@id"],
     title: .name,
     abstract: .description
   },
-  
-  distribution:  .distribution | {
+
+  distribution: [if .distribution|type == "array" then .distribution[] else .distribution end | {
     online: {
       onlineUrl: .contentUrl
       }
-  },
+  }],
   
   coverage: {
     temporalCoverage: {
