@@ -3,8 +3,32 @@
 {
   id: .["@id"],
   type: "Dataset",
-  dataset: .dataset | {
-      temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
+  citation: .citation | {
+    id: .id,
+    type: "CreativeWork",
+    headline: .title,
+    about: .abstract.para,
+    
+    creator: [if .creator|type == "array" then .creator[] else .creator end | {
+      type: "Person",
+      givenName: .individualName.givenName,
+      familyName: .individualName.surName, },
+      {
+      type: "Organization",
+      organizationName: .organizationName}] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
+      
+    publisher: [.audioVisual.publisher | {
+      type: "Person",
+      givenName: .individualName.givenName,
+      familyName: .individualName.surName, 
+    },
+    {
+      type: "Organization",
+      organizationName: .organizationName
+    }] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
+    datePublished: .pubDate},
+    
+  temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
     [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
   spatialCoverage: .coverage.geographicCoverage | {
     type: "Place",
@@ -18,7 +42,12 @@
          .eastBoundingCoordinate] | join(" ")
       }
   },
-  creator: [if .creator[].individualName then .creator[] | 
+  
+  text: [if .section|type == "array" then .section[] else .section end],
+  
+  creator: [if .creator|type == "array" then .creator[] else .creator end | 
+ 
+  if .individualName then  
     if .address then 
       {
       type: "Person",
@@ -43,7 +72,7 @@
     empty
   end,
   
-  if .creator[].organizationName then .creator[] | 
+  if .organizationName then  
     if .address then
       {
       type: "Organization",
@@ -110,50 +139,8 @@
     end
   else 
     empty
-  end] | del( .[] |select(.givenName == null and .organizationName == null)) | unique | reverse },
-    
-  
-  
-  
-  citation: .citation | {
-    id: .id,
-    type: "CreativeWork",
-    headline: .title,
-    about: .abstract.para,
-    creator: [.creator | {
-      type: "Person",
-      givenName: .individualName.givenName,
-      familyName: .individualName.surName, },
-      {
-      type: "Organization",
-      organizationName: .organizationName}] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
-      
-    publisher: [.audioVisual.publisher | {
-      type: "Person",
-      givenName: .individualName.givenName,
-      familyName: .individualName.surName, 
-    },
-    {
-      type: "Organization",
-      organizationName: .organizationName
-    }] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
-    datePublished: .pubDate},
-      
-      
-  temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
-    [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
-  spatialCoverage: .coverage.geographicCoverage | {
-    type: "Place",
-    description: .geographicDescription,
-      geo: {
-        type: "GeoShape",
-        box: .boundingCoordinates |
-        [.southBoundingCoordinate,
-         .westBoundingCoordinate,
-         .northBoundingCoordinate,
-         .eastBoundingCoordinate] | join(" ")
-      }
-  }
-
+  end] | del( .[] |select(.givenName == null and .organizationName == null)) | unique | reverse
 }
+
+
 

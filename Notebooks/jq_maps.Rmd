@@ -47,22 +47,17 @@ Let's map a more complete EML document into schema.org:
 
 ```{r}
 getwd()
-eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
+eml_to_schema <- readr::read_file("jq/eml_to_schema2.jq")
 eml <- readr::read_file("../examples/hf205.json")
 jq(eml, eml_to_schema)
 
 ```
 
-```{r}
-eml_to_schema <- readr::read_file("jq/eml_to_schema2.jq")
-eml_citation50 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.50.json")
-jq(eml_citation50, eml_to_schema)
-```
 
 ```{r}
-eml_to_schema <- readr::read_file("jq/eml_to_schema.jq")
-eml_citation51 <- readr::read_file("../examples/eml/citation-sbclter-bibliography.51.json")
-jq(eml_citation51, eml_to_schema)
+eml_to_schema <- readr::read_file("jq/eml_to_schema2.jq")
+eml_citation50 <- readr::read_file("../examples/eml/eml-text.json")
+jq(eml_citation50, eml_to_schema)
 ```
 
 
@@ -80,7 +75,7 @@ eml <- jq(schema, schema_to_eml)
 eml
 ```
 
-```{r}
+```{r}/
 schema_to_eml <-  readr::read_file("jq/schema_to_eml.jq")
 schema <- readr::read_file("../examples/earthcube.json")
 getwd()
