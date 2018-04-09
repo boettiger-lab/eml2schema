@@ -9,13 +9,6 @@
     headline: .title,
     about: .abstract.para,
     
-    creator: [if .creator|type == "array" then .creator[] else .creator end | {
-      type: "Person",
-      givenName: .individualName.givenName,
-      familyName: .individualName.surName, },
-      {
-      type: "Organization",
-      organizationName: .organizationName}] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
       
     publisher: [.audioVisual.publisher | {
       type: "Person",
@@ -28,6 +21,16 @@
     }] | del( .[] |select(.givenName == null and .organizationName == null)) | unique,
     datePublished: .pubDate},
     
+    keywords: .dataset.keywordSet.keyword,
+    
+    datePublished: .pubDate,
+    
+    .headline: .title,
+    
+    .license: .license,
+    
+    text: [if .section|type == "array" then .section[] else .section end],
+      
   temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
     [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
   spatialCoverage: .coverage.geographicCoverage | {
@@ -43,11 +46,8 @@
       }
   },
   
-  text: [if .section|type == "array" then .section[] else .section end],
-  
-  creator: [if .creator|type == "array" then .creator[] else .creator end | 
- 
-  if .individualName then  
+  creator: .creator |
+  [if .individualName then  
     if .address then 
       {
       type: "Person",
@@ -139,7 +139,7 @@
     end
   else 
     empty
-  end] | del( .[] |select(.givenName == null and .organizationName == null)) | unique | reverse
+  end]
 }
 
 
