@@ -25,9 +25,21 @@
     
     datePublished: .pubDate,
     
-    .headline: .title,
+    headline: .title,
     
-    .license: .license,
+    license: .license,
+    
+    DataDownload: [.dataset.distribution.online.url, 
+                    .distribution.online.url,
+                    .dataset.dataTable.physical.distribution.online.url
+                    ],
+    
+    variableMeasured: .dataset.dataTable.attributeList.attribute[] |{
+      value: .attributeLabel,
+      description: .attributeDefinition,
+      unitText: .measurementScale.interval.unit.standardUnit,
+      url: .url
+    },
     
     text: [if .section|type == "array" then .section[] else .section end],
       
