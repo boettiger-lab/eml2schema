@@ -35,6 +35,7 @@
                     ],
     
     variableMeasured: .dataset.dataTable.attributeList.attribute[] |{
+      name: .attributeName
       value: .attributeLabel,
       description: .attributeDefinition,
       unitText: .measurementScale.interval.unit.standardUnit,
