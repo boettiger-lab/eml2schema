@@ -31,18 +31,23 @@
     
     DataDownload: [.dataset.distribution.online.url, 
                     .distribution.online.url,
-                    .dataset.dataTable.physical.distribution.online.url
-                    ],
+                    .dataset.dataTable.physical.distribution.online.url,
+                    .otherEntity.physical.distribution.online.url
+                    ] | delpaths([path(.[]| select(.==null))]),
     
-    variableMeasured: .dataset.dataTable.attributeList.attribute[] |{
-      name: .attributeName
+    variableMeasured: [if .dataset.dataTable.attributeList.attribute then .dataset.dataTable.attributeList.attribute[] else .attribute[] end |{
+      id: .id,
       value: .attributeLabel,
       description: .attributeDefinition,
       unitText: .measurementScale.interval.unit.standardUnit,
-      url: .url
-    },
+      url: .url,
+      maxValue: [if .measurementScale.interval.numericDomain then .measurementScale.interval.numericDomain.bounds.maximum.maximum else .measurementScale.dateTime.dateTimeDomain.bounds.maximum.maximum end],
+      minValue: [if .measurementScale.interval.numericDomain then .measurementScale.interval.numericDomain.bounds.minimum.minimum else .measurementScale.dateTime.dateTimeDomain.bounds.minimum.minimum end]
+      }] | delpaths([path(.[][]| select(.==null))]),
     
-    text: [if .section|type == "array" then .section[] else .section end],
+    
+    
+    text: [if .section|type == "array" then .section[] else .section end] | delpaths([path(.[]| select(.==null))]),
       
   temporalCoverage: .coverage.temporalCoverage.rangeOfDates |
     [.beginDate.calendarDate, .endDate.calendarDate] | join("/"),
@@ -59,8 +64,10 @@
       }
   },
   
-  creator: .creator |
-  [if .individualName then  
+  creator: 
+  
+  [if .creator|type == "array" then .creator[] else .creator end |
+  if .individualName then  
     if .address then 
       {
       type: "Person",
